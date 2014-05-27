@@ -1,0 +1,6 @@
+#scale_table
+
+{{view STI.DatePickerField}}
+{{view STI.DatePickerField}}
+{{view STI.NumberField}}
+%button{_action: 'submitAction target="controller"'} Submit

@@ -14,8 +14,8 @@ namespace :build do
 
     require 'sprockets'
     require 'handlebars_assets'
+    require 'hamlbars'
 
-    #HandlebarsAssets::Config.template_namespace = 'JST'
     HandlebarsAssets::Config.ember = true
     environment = Sprockets::Environment.new
     environment.append_path 'app'

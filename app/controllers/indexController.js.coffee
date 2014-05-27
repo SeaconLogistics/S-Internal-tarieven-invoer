@@ -1,1 +1,3 @@
-STI.IndexController = Em.Controller.extend()
+STI.IndexController = Em.Controller.extend
+  submitAction: ->
+    console.log 'submit'
