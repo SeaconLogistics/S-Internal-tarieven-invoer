@@ -13,12 +13,17 @@ namespace :build do
     end
 
     require 'sprockets'
+    require 'handlebars_assets'
+
+    #HandlebarsAssets::Config.template_namespace = 'JST'
+    HandlebarsAssets::Config.ember = true
     environment = Sprockets::Environment.new
     environment.append_path 'app'
 
     asset = environment.find_asset('application')
     asset.write_to 'dist/application.js'
 
+    # Copy vendored js to dist
     Dir.entries('vendor').reject { |f| f == '.' || f == '..' }.each do |f|
       FileUtils.copy_file "vendor/#{f}", "dist/#{f}"
     end

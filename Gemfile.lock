@@ -51,6 +51,16 @@ GEM
       rubocop (~> 0.20)
     haml (4.0.5)
       tilt
+    hamlbars (2.1.1)
+      execjs (>= 1.2)
+      haml
+      sprockets (>= 2.0)
+      tilt
+    handlebars_assets (0.15)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     hike (1.2.3)
     jasmine (1.2.1)
       jasmine-core (>= 1.2.0)
@@ -135,7 +145,10 @@ DEPENDENCIES
   guard-rake
   guard-rubocop
   haml
+  hamlbars
+  handlebars_assets
   jasmine
+  pry
   rake
   rspec
   rubocop

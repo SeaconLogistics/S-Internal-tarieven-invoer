@@ -3,10 +3,13 @@ ruby '2.1.1'
 
 gem 'sprockets'
 gem 'haml'
+gem 'hamlbars'
+gem 'handlebars_assets'
 gem 'coffee-script'
 
 gem 'rake'
 
+gem 'pry'
 gem 'cucumber'
 gem 'rspec'
 gem 'jasmine'
