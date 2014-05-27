@@ -18,6 +18,10 @@ namespace :build do
 
     asset = environment.find_asset('application')
     asset.write_to 'dist/application.js'
+
+    Dir.entries('vendor').reject { |f| f == '.' || f == '..' }.each do |f|
+      FileUtils.copy_file "vendor/#{f}", "dist/#{f}"
+    end
   end
 
   task :tests do
