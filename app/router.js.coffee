@@ -1,2 +1,0 @@
-STI.Router.reopen
-  rootURL: '/'
