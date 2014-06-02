@@ -1,6 +1,7 @@
 #scale_table
 
-{{view STI.DatePickerField}}
-{{view STI.DatePickerField}}
-{{view STI.NumberField}}
-%button{_action: 'submitAction target="controller"'} Submit
+{{view STI.DatePickerField valueBinding="view.fromDate"}}
+{{view STI.DatePickerField valueBinding="view.toDate"}}
+{{view STI.NumberField valueBinding="view.counter"}}
+
+%button{_action: 'submit target="view"'} Submit

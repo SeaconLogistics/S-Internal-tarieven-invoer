@@ -8,3 +8,8 @@ STI.DatePickerField = Em.TextField.extend
       format: 'YYYYMMDD'
 
     @set("_picker", picker)
+
+  willDestroyElement: ->
+    if @get('_picker')
+      @get('_picker').destroy()
+    @set('_picker', null)

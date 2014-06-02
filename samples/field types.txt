@@ -1,0 +1,34 @@
+i = i of u (insert of update)
+5369000001 = teller (3e field formulier)
+1 = vast
+GBX018 = lane (1e col)
+EUR
+1699
+N
+1
+1
+0
+
+0.00
+1
+0.00
+1
+0.00
+1
+SCJV
+0
+2
+0
+
+
+20120101 = datum van (field 1)
+20120131 = datum tot (field 2)
+0
+0.001 = van staffel
+999999999.000 = tot staffel
+0
+298.36 = bedrag
+0
+298.36 = bedrag
+298.36 = bedrag
+0;0;;;; 
