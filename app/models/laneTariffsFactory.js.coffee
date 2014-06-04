@@ -1,5 +1,3 @@
-#= require models/laneTariffs
-
 STI.LaneTariffsFactory = Em.Object.extend
   data: null
   fromDate: null
