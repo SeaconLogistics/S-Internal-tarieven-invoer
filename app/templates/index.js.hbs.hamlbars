@@ -1,4 +1,4 @@
-#scale_table
+#scale_table{style: 'margin-bottom: 50px;'}
 
 {{view STI.DatePickerField valueBinding="view.fromDate"}}
 {{view STI.DatePickerField valueBinding="view.toDate"}}

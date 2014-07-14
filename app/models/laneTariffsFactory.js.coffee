@@ -13,6 +13,12 @@ STI.LaneTariffsFactory = Em.Object.extend
     @set '_tariffs', STI.LaneTariffs.create()
     @set '_count', (@get('data').length - 2)
 
+  nextCounter: ->
+    next = parseInt(@get('counter'))
+    console.log next
+    @set('counter', next+1)
+    next
+
   getTariffs: ->
     @set('_tariffs', [])
 
@@ -24,6 +30,7 @@ STI.LaneTariffsFactory = Em.Object.extend
       pricesLength = row.length - 2
       pricesIndex = 1
       lane = row[0]
+      laneCounter = @nextCounter()
 
       while pricesIndex <= pricesLength
         price = row[pricesIndex]
@@ -31,7 +38,7 @@ STI.LaneTariffsFactory = Em.Object.extend
         scaleFrom = scale.match(/(\d+.\d{3})/g)[0]
         scaleTo = scale.match(/(\d+.\d{3})/g)[1]
 
-        @get('_tariffs').push "i;#{@get('counter')};1;#{lane};EUR;1699;N;1;1;0;;0.00;1;0.00;1;0.00;1;SCJV;0;2;0;;;#{@get('fromDate')};#{@get('toDate')};0;#{scaleFrom};#{scaleTo};0;#{price};0;#{price};#{price};0;0;;;;"
+        @get('_tariffs').push "i;#{laneCounter};1;#{lane};EUR;1699;N;1;1;0;;0.00;1;0.00;1;0.00;1;SCJV;0;2;0;;;#{@get('fromDate')};#{@get('toDate')};0;#{scaleFrom};#{scaleTo};0;#{price};0;#{price};#{price};0;0;;;;"
         pricesIndex += 1
 
       rowIndex += 1
