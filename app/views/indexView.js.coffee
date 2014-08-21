@@ -2,7 +2,7 @@ STI.IndexView = Em.View.extend
   _table: null
   fromDate: null
   toDate: null
-  counter: null
+  counter: "1"
 
   submit: ->
     if !@get('fromDate') or !@get('toDate') or !@get('counter')
@@ -19,21 +19,11 @@ STI.IndexView = Em.View.extend
     tariffs = factory.getTariffs()
     console.log { tariffs: tariffs }
 
-    $.ajax(
-      type: 'POST'
-      url: 'http://89.20.87.230:9000/seacon_tarieven_invoer/sti_inbound'
-      data: { tariffs: tariffs }
-    )
-    .done (response) ->
-      console.log response
-    .fail (jqXHR, textStatus) ->
-      console.log 'fail', textStatus
-
   didInsertElement: ->
     $('#scale_table').handsontable
-      data: [[" ", " "," "]]
+      data: [[" ", " "," "," "]]
       startRows: 2
-      startCols: 3
+      startCols: 5
       colHeaders: (col) => @get('_colHeaders')(col)
       minSpareCols: 1
       minSpareRows: 1
@@ -71,7 +61,7 @@ STI.IndexView = Em.View.extend
           fieldCount -= 1
 
       else
-        if col != 0
+        if col > 2
           centValue = fieldValue.replace /\D/g, ''
           changes[i][3] = (centValue / 100.0).toFixed(2)
 
@@ -81,4 +71,12 @@ STI.IndexView = Em.View.extend
     if col == 0
       "Lane"
     else
-      "Staffel"
+      if col == 1
+        "Tariff"
+      else
+        if col == 2
+          "Group"
+        else
+          "Staffel"
+      
+        
